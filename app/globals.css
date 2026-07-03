@@ -1,26 +1,30 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Set core editor dark mode background default */
+html, body {
+  background-color: #0d1117 !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Fix React Flow canvas styling conflict overrides */
+.react-flow__controls button {
+  background-color: #161b22 !important;
+  fill: #c9d1d9 !important;
+  border: 1px solid #30363d !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.react-flow__controls button:hover {
+  background-color: #21262d !important;
+  fill: #f0f6fc !important;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.react-flow__attribution {
+  background: rgba(13, 17, 23, 0.5) !important;
+  color: #484f58 !important;
+  font-size: 9px !important;
 }
